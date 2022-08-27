@@ -21,7 +21,7 @@ get ApiUrl() {
         let originalPath = window.location.origin;
         let domain: string = "";// hamarai live ki yah dev ki url
         if (originalPath.includes("localhost")) {
-            domain = "http://localhost:3000/";
+            domain = "http://localhost:3001/";
         }
         return domain;
     }

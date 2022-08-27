@@ -28,26 +28,34 @@ export class SignupComponent implements OnInit {
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
     })
   }
-  get email() { return this.signUpForm.get('username') }
+  get username() { return this.signUpForm.get('username') }
   get password() { return this.signUpForm.get('password') }
+  get email() { return this.signUpForm.get('email') }
 
   
   onSubmit(){
     console.log(this.signUpForm.value)
     this.obj.username = this.signUpForm.value['username'];
-    this.obj.password = this.signUpForm.value['password']
-    console.log(this.obj)
-    // this._authService.signUp(this.obj).subscribe((x) => {
-    //   if(x.success){
-    //     return x
-    //   }
-    //   else{
-    //     alert("Error occur while.")
-    //     return x
-    //   }
-    // })
+    this.obj.password = this.signUpForm.value['password'];
+    this.obj.email = this.signUpForm.value['email'];
+    this._authService.signUp(this.obj).subscribe((x) => {
+      if(x.success){
+        this.resetTheForm();
+        return x;
+      }
+      else{
+        alert("Error occur while.")
+        return x
+      }
+    })
+  }
+
+
+  resetTheForm(): void {
+    this.signUpForm.reset();
   }
 
 }
