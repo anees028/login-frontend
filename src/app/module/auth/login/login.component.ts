@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { login } from 'src/app/models/auth/auth';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import {  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -38,13 +39,23 @@ export class LoginComponent implements OnInit {
 
     this._authService.userLogin(this.obj).subscribe(x => {
       if(x.success){
-        alert("Login Successfull")
+        alert("Welcome to dashboard")
       }
       else{
         alert("Login Failed")
       }
     })
+  }
 
+  signInWithGoogle(){
+    this._authService.signInWithGoogle().subscribe(x =>{
+      if(x.success){
+        alert("Welcome to dashboard")
+      }
+      else{
+        alert("Login Failed")
+      }
+    })
   }
 
 }

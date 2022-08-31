@@ -20,10 +20,12 @@ export class AuthService {
     return this._dataService.genericServiceCaller(REQUESTTYPE.POST, `user/addUser`,  obj)
   }
 
-
   userLogin(obj:login){
     return this._dataService.genericServiceCaller(REQUESTTYPE.POST, `user/userLogin`, obj);
   }
 
+  signInWithGoogle(){
+    return this._dataService.genericServiceCaller(REQUESTTYPE.GET, `user/googleSignIn`, true);
+  }
 
 }
