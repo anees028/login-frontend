@@ -15,12 +15,11 @@
                                 <div class="example-button-row">
                                     <div class="example-flex-container">
                                         <div class="example-button-container">
-                                            <button mat-mini-fab color="warn"
-                                                aria-label="Example icon button with a filter list icon"
-                                                (click)="signInWithGoogle()">
-                                                <mat-icon>filter_list</mat-icon>
-                                                <!-- <i class="fa-brands fa-google"></i> -->
+                                            
+                                            <button class="btn btn-block google-sign-in" (click)="signInWithGoogle()">
+                                                <img [src]="'assets/images/general/google.svg'" alt="Google" width="20px" height="20px" />
                                             </button>
+                                            <!-- <asl-google-signin-button class="mx-5"></asl-google-signin-button> -->
                                         </div>
                                     </div>
                                 </div>

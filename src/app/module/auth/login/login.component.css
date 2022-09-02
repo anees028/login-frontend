@@ -12031,3 +12031,8 @@ h5,
   justify-content: center;
   width: 120px;
 }
+
+.google-sign-in{
+  background-color: white;
+  border: 1px solid #D8DDEC;
+}
